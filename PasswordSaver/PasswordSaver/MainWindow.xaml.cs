@@ -42,16 +42,21 @@ namespace PasswordSaver
             StreamWriter sw = File.AppendText("Resources.txt");
             for (int i = 0; i < accountList.Count; i++)
             {
-                sw.WriteLine(accountList[i].resourse);
-                sw.WriteLine(accountList[i].login);
-                sw.WriteLine(accountList[i].password);
+                sw.WriteLine("Resourse: " + accountList[i].resourse);
+                sw.WriteLine("Login: " + accountList[i].login);
+                sw.WriteLine("Password: " + accountList[i].password);
             }
             sw.WriteLine("____________________________________\r");
             sw.Close();
             accountList.Clear();
-            
- 
-            //в конце добавить востановление значений инпутов
+
+            MessageBoxButton btn_ok = MessageBoxButton.OK;
+            MessageBoxImage msg_img = MessageBoxImage.Asterisk;
+            MessageBox.Show("Record added", "Complete", btn_ok, msg_img);
+
+            ResourceInput.Text = "Resource";
+            LoginInput.Text = "Login name";
+            PasswordInput.Text = "Password";
         }
 
         private void ClearBoxOnFocus(object sender,RoutedEventArgs e)

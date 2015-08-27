@@ -1,16 +1,4 @@
-Resource
-Login name
-Password
-____________________________________
-Resource
-Login name
-Password
-____________________________________
-Resource
-Login name
-Password
-____________________________________
-Resource
-Login name
-Password
+Resourse: Resourse
+Login: Login name
+Password: 
 ____________________________________
