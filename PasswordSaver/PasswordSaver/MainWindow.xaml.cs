@@ -20,9 +20,76 @@ namespace PasswordSaver
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<AccountData> accountList = new List<AccountData>();
+        AllListWindow allListWindow = new AllListWindow();
+
         public MainWindow()
         {
             InitializeComponent();
         }
+
+
+        private void Add_btn_Click(object sender, RoutedEventArgs e)
+        {
+            accountList.Add(new AccountData
+            {
+                resourse = ResourceInput.Text,
+                login = LoginInput.Text,
+                password = PasswordInput.Text
+            });
+
+            //в конце добавить востановление значений инпутов
+        }
+
+        private void ClearBoxOnFocus(object sender,RoutedEventArgs e)
+        {
+            if (ResourceInput.IsFocused)
+            {
+                ResourceInput.Clear();
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(ResourceInput.Text))
+                {
+                    ResourceInput.Text = "Resourse";
+                }
+            }
+
+            if (LoginInput.IsFocused)
+            {
+                LoginInput.Clear();
+            }
+            else
+            { 
+                if (string.IsNullOrEmpty(LoginInput.Text))
+                {
+                    LoginInput.Text = "Login name";
+                }
+            }
+
+            if (PasswordInput.IsFocused)
+            {
+                PasswordInput.Clear();
+            }
+            else
+            { 
+                if (string.IsNullOrEmpty(PasswordInput.Text))
+                {
+                    PasswordInput.Text = "Password";
+                }
+            }
+        }
+
+        private void AllList_btn_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+    }
+
+    public class AccountData
+    {
+        public string resourse{get;set;}
+        public string login{get;set;}
+        public string password { get; set; }
     }
 }
