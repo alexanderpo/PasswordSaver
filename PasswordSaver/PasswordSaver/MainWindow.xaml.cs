@@ -39,8 +39,17 @@ namespace PasswordSaver
                 password = PasswordInput.Text
             });
 
-            
-            
+            FileInfo fi = new FileInfo("Resources.txt");
+            StreamWriter sw = new StreamWriter(fi.OpenWrite());
+            for (int i = 0; i < accountList.Count; i++)
+            {
+                sw.WriteLine(accountList[i].resourse);
+                sw.WriteLine(accountList[i].login);
+                sw.WriteLine(accountList[i].password);
+            }
+            sw.Close();
+
+ 
             //в конце добавить востановление значений инпутов
         }
 
@@ -86,6 +95,11 @@ namespace PasswordSaver
         private void AllList_btn_Click(object sender, RoutedEventArgs e)
         {
             allListWindow.Visibility = Visibility.Visible;
+        }
+
+        private void Main_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 
