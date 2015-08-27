@@ -82,7 +82,7 @@ namespace PasswordSaver
 
         private void AllList_btn_Click(object sender, RoutedEventArgs e)
         {
-           
+            allListWindow.Visibility = Visibility.Visible;
         }
     }
 
