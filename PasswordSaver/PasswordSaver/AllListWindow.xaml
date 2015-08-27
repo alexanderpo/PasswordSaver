@@ -4,13 +4,5 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Name="AllList" x:Class="PasswordSaver.AllListWindow"
         Title="AllListWindow" Height="500" Width="350
     " ResizeMode="CanResizeWithGrip" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" WindowStyle="ToolWindow" Closing="AllList_Closing" Background="#FFF0F0F0" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <DataGrid x:Name="ListTable" HorizontalAlignment="Left" Height="475" VerticalAlignment="Top" Width="342" HeadersVisibility="Column" FontFamily="Levenim MT" FontStyle="Italic" EnableColumnVirtualization="True" IsReadOnly="True">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Resource" FontFamily="Levenim MT" HeaderStringFormat="" FontStyle="Italic" SortDirection="Ascending"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Login name"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Password"/>
-            </DataGrid.Columns>
-        </DataGrid>
-    </Grid>
+    <TextBox x:Name="AllListBox" HorizontalAlignment="Left" Height="475" TextWrapping="Wrap" VerticalAlignment="Top" Width="342" Background="#FFF0F0F0" UndoLimit="100000" IsEnabled="False"/>
 </Window>

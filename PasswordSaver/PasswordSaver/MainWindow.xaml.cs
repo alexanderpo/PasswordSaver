@@ -101,6 +101,7 @@ namespace PasswordSaver
         private void AllList_btn_Click(object sender, RoutedEventArgs e)
         {
             allListWindow.Visibility = Visibility.Visible;
+            allListWindow.AllListBox.Text = File.ReadAllText("Resources.txt");
         }
 
         private void Main_Closing(object sender, System.ComponentModel.CancelEventArgs e)
