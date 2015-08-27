@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace PasswordSaver
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<AccountData> accountList = new List<AccountData>();
+        public List<AccountData> accountList = new List<AccountData>();
         AllListWindow allListWindow = new AllListWindow();
 
         public MainWindow()
@@ -38,6 +39,8 @@ namespace PasswordSaver
                 password = PasswordInput.Text
             });
 
+            
+            
             //в конце добавить востановление значений инпутов
         }
 
@@ -88,8 +91,8 @@ namespace PasswordSaver
 
     public class AccountData
     {
-        public string resourse{get;set;}
-        public string login{get;set;}
+        public string resourse{ get; set; }
+        public string login{ get; set; }
         public string password { get; set; }
     }
 }

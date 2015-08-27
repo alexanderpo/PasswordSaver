@@ -17,6 +17,7 @@ namespace PasswordSaver
     /// <summary>
     /// Interaction logic for AllListWindow.xaml
     /// </summary>
+    /// 
     public partial class AllListWindow : Window
     {
         public AllListWindow()
@@ -28,6 +29,7 @@ namespace PasswordSaver
         {
             e.Cancel = true;
             this.Visibility = Visibility.Hidden;
+            
         }
     }
 }

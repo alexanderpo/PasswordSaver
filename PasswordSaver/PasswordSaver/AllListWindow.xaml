@@ -2,6 +2,15 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Name="AllList" x:Class="PasswordSaver.AllListWindow"
-        Title="AllListWindow" Height="300" Width="300" ResizeMode="CanResizeWithGrip" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible" WindowStyle="ToolWindow" Closing="AllList_Closing">
-    <Grid/>
+        Title="AllListWindow" Height="500" Width="350
+    " ResizeMode="CanResizeWithGrip" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" WindowStyle="ToolWindow" Closing="AllList_Closing" Background="#FFF0F0F0" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid x:Name="ListTable" HorizontalAlignment="Left" Height="475" VerticalAlignment="Top" Width="342" HeadersVisibility="Column" FontFamily="Levenim MT" FontStyle="Italic" EnableColumnVirtualization="True" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Resource" FontFamily="Levenim MT" HeaderStringFormat="" FontStyle="Italic" SortDirection="Ascending"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Login name"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Password"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
 </Window>
