@@ -39,16 +39,17 @@ namespace PasswordSaver
                 password = PasswordInput.Text
             });
 
-            FileInfo fi = new FileInfo("Resources.txt");
-            StreamWriter sw = new StreamWriter(fi.OpenWrite());
+            StreamWriter sw = File.AppendText("Resources.txt");
             for (int i = 0; i < accountList.Count; i++)
             {
                 sw.WriteLine(accountList[i].resourse);
                 sw.WriteLine(accountList[i].login);
                 sw.WriteLine(accountList[i].password);
             }
+            sw.WriteLine("____________________________________\r");
             sw.Close();
-
+            accountList.Clear();
+            
  
             //в конце добавить востановление значений инпутов
         }
