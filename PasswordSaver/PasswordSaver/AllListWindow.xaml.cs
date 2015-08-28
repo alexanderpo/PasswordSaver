@@ -36,10 +36,16 @@ namespace PasswordSaver
 
         private void Save_btn_Click(object sender, RoutedEventArgs e)
         {
+
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "(*.txt) | *.txt";
+            saveFileDialog.Filter = "Text file (*.txt)|*.txt";
             if (saveFileDialog.ShowDialog() == true)
+            {
                 File.WriteAllText(saveFileDialog.FileName, AllListBox.Text);
+                MessageBoxButton btn_ok = MessageBoxButton.OK;
+                MessageBoxImage msg_img = MessageBoxImage.Asterisk;
+                MessageBox.Show("Accounts saved!", "Complete", btn_ok, msg_img);
+            }
         }
 
     }
