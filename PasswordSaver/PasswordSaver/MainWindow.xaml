@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:tb="http://www.hardcodet.net/taskbar" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Name="Main" x:Class="PasswordSaver.MainWindow"
-        Title="MainWindow" Height="176" Width="285" Cursor="Arrow" WindowStartupLocation="CenterScreen" Foreground="Black" Background="#FFF0F0F0" Icon="lock.ico" Closing="Main_Closing" ResizeMode="CanMinimize" StateChanged="Main_StateChanged">
+        Title="MainWindow" Height="176" Width="285" Cursor="Arrow" WindowStartupLocation="CenterScreen" Foreground="Black" Background="#FFF0F0F0" Icon="lock.ico" Closing="Main_Closing" ResizeMode="CanMinimize" StateChanged="Main_StateChanged" Topmost="True" Focusable="False">
     <Grid HorizontalAlignment="Left" Width="265" Margin="0,0,0,6">
         <tb:TaskbarIcon x:Name="NotifyIcon"
             IconSource="lock.ico"
