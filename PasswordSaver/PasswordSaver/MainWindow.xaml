@@ -8,7 +8,7 @@
         <tb:TaskbarIcon x:Name="NotifyIcon"
             IconSource="lock.ico"
             Visibility="Hidden"
-            ToolTipText="PasswordSaver" />
+            ToolTipText="PasswordSaver" TrayMouseDoubleClick="NotifyIcon_TrayMouseDoubleClick" />
         
         <TextBox x:Name="LoginInput" Height="27" Margin="10,35,0,0" TextWrapping="Wrap" Text="Login name" VerticalAlignment="Top" Width="250" HorizontalAlignment="Left" TextDecorations="{x:Null}" FontFamily="Levenim MT" FontStyle="Italic" Background="#FFF6F6F6" BorderBrush="{x:Null}" SelectionBrush="#FFB5E2F7" Foreground="#FF494949" UndoLimit="200" Cursor="Pen" GotFocus="ClearBoxOnFocus"/>
         <TextBox x:Name="PasswordInput" Height="27" Margin="10,67,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="250" HorizontalAlignment="Left" TextDecorations="{x:Null}" FontFamily="Levenim MT" FontStyle="Italic" Background="#FFF6F6F6" BorderBrush="{x:Null}" SelectionBrush="#FFB5E2F7" Foreground="#FF494949" UndoLimit="200" Cursor="Pen" GotFocus="ClearBoxOnFocus"/>

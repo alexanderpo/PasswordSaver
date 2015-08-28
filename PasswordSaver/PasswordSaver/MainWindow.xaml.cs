@@ -109,6 +109,7 @@ namespace PasswordSaver
         private void Main_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
+            NotifyIcon.Visibility = Visibility.Hidden;
         }
 
         private void Main_StateChanged(object sender, EventArgs e)
@@ -122,6 +123,15 @@ namespace PasswordSaver
             }
                 
         }
+
+        private void NotifyIcon_TrayMouseDoubleClick(object sender, RoutedEventArgs e)
+        {
+            Main.WindowState = WindowState.Normal;
+            Main.ShowInTaskbar = true;
+            NotifyIcon.Visibility = Visibility.Hidden;
+            Main.Show();
+        }
+
     }
 
     public class AccountData
