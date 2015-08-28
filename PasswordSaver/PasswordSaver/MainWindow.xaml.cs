@@ -128,8 +128,6 @@ namespace PasswordSaver
         {
             Main.WindowState = WindowState.Normal;
             Main.Show();
-            Main.ShowActivated = true;
-            Main.ShowDialog();
             Main.ShowInTaskbar = true;
             NotifyIcon.Visibility = Visibility.Hidden;
         }
