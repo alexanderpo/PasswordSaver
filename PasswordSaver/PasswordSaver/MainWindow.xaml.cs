@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hardcodet.Wpf.TaskbarNotification;
 
 namespace PasswordSaver
 {
@@ -23,6 +24,7 @@ namespace PasswordSaver
     {
         public List<AccountData> accountList = new List<AccountData>();
         AllListWindow allListWindow = new AllListWindow();
+        private TaskbarIcon tb; 
 
         public MainWindow()
         {
@@ -107,6 +109,18 @@ namespace PasswordSaver
         private void Main_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void Main_StateChanged(object sender, EventArgs e)
+        {
+            if (Main.WindowState == WindowState.Minimized)
+            {
+                Main.WindowState = WindowState.Minimized;
+                Main.ShowInTaskbar = false;
+                NotifyIcon.Visibility = Visibility.Visible;
+                Main.Hide();
+            }
+                
         }
     }
 
