@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace PasswordSaver
 {
@@ -35,7 +36,10 @@ namespace PasswordSaver
 
         private void Save_btn_Click(object sender, RoutedEventArgs e)
         {
-            
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "(*.txt) | *.txt";
+            if (saveFileDialog.ShowDialog() == true)
+                File.WriteAllText(saveFileDialog.FileName, AllListBox.Text);
         }
 
     }
