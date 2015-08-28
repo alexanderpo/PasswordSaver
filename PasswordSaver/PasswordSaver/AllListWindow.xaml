@@ -3,5 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Name="AllList" x:Class="PasswordSaver.AllListWindow"
         Title="AllListWindow" Height="510" Width="313" ResizeMode="NoResize" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible" WindowStyle="ToolWindow" Closing="AllList_Closing" Background="#FFF0F0F0" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
-    <TextBox x:Name="AllListBox" HorizontalAlignment="Left" Height="475" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" Background="#FFF0F0F0" AutoWordSelection="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" IsReadOnly="True"/>
+    <Grid HorizontalAlignment="Left" Height="487" VerticalAlignment="Top" Width="307">
+        <TextBox x:Name="AllListBox" Height="487" TextWrapping="Wrap" VerticalAlignment="Bottom" Background="#FFF0F0F0" AutoWordSelection="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" IsReadOnly="True" HorizontalAlignment="Left" Width="237"/>
+        <Button x:Name="Save_btn" Content="Save " HorizontalAlignment="Left" Margin="247,10,0,0" VerticalAlignment="Top" Width="50" Background="#FFCCCEDB" BorderBrush="{x:Null}" Cursor="Hand" FontFamily="Levenim MT" Height="25" RenderTransformOrigin="0.5,0.5" FontStyle="Italic" Click="Save_btn_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1" ScaleX="1"/>
+                    <SkewTransform AngleY="0" AngleX="0"/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+    </Grid>
 </Window>
