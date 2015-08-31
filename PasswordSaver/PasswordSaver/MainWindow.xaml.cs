@@ -1,19 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using Hardcodet.Wpf.TaskbarNotification;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Hardcodet.Wpf.TaskbarNotification;
 
 namespace PasswordSaver
 {
@@ -23,14 +12,13 @@ namespace PasswordSaver
     public partial class MainWindow : Window
     {
         public List<AccountData> accountList = new List<AccountData>();
-        AllListWindow allListWindow = new AllListWindow();
-        private TaskbarIcon tb; 
+        private AllListWindow allListWindow = new AllListWindow();
+        private TaskbarIcon tb;
 
         public MainWindow()
         {
             InitializeComponent();
         }
-
 
         private void Add_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -61,7 +49,7 @@ namespace PasswordSaver
             PasswordInput.Text = "Password";
         }
 
-        private void ClearBoxOnFocus(object sender,RoutedEventArgs e)
+        private void ClearBoxOnFocus(object sender, RoutedEventArgs e)
         {
             if (ResourceInput.IsFocused)
             {
@@ -80,7 +68,7 @@ namespace PasswordSaver
                 LoginInput.Clear();
             }
             else
-            { 
+            {
                 if (string.IsNullOrEmpty(LoginInput.Text))
                 {
                     LoginInput.Text = "Login name";
@@ -92,7 +80,7 @@ namespace PasswordSaver
                 PasswordInput.Clear();
             }
             else
-            { 
+            {
                 if (string.IsNullOrEmpty(PasswordInput.Text))
                 {
                     PasswordInput.Text = "Password";
@@ -121,7 +109,6 @@ namespace PasswordSaver
                 NotifyIcon.Visibility = Visibility.Visible;
                 Main.Hide();
             }
-                
         }
 
         private void NotifyIcon_TrayMouseDoubleClick(object sender, RoutedEventArgs e)
@@ -131,13 +118,12 @@ namespace PasswordSaver
             Main.ShowInTaskbar = true;
             NotifyIcon.Visibility = Visibility.Hidden;
         }
-
     }
 
     public class AccountData
     {
-        public string resourse{ get; set; }
-        public string login{ get; set; }
+        public string resourse { get; set; }
+        public string login { get; set; }
         public string password { get; set; }
     }
 }
